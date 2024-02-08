@@ -2,7 +2,7 @@
 vol-nonvol 데이터를 추출하여 저장하는 배치 스크립트입니다.
 
 ###### [24.02.08] prefetch,vol_net, vol_process, vol_logonAccount 명령어추가
-###### [24.02.09] vol_net 명령어추가
+###### [24.02.09] vol_logonAccount 명령어추가
 ## Prefetch
 <ul>forecopy_handy -p .\_result\_prefetch\</ul>
 
@@ -11,7 +11,6 @@ vol-nonvol 데이터를 추출하여 저장하는 배치 스크립트입니다.
 <ul>arp -a > "%net%\arp.txt"</ul>
 <ul>netstat -ano > "%net%\netstat.txt"</ul>
 <ul>route print > "%net%\route.txt"</ul>
-<ul>net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"</ul>
 
 #### process
 <ul>powershell.exe -command ps > "%process%\ps.txt"</ul>
@@ -20,7 +19,7 @@ vol-nonvol 데이터를 추출하여 저장하는 배치 스크립트입니다.
 #### logonAccount
 <ul>net user > "%logonAccount%\netuser.txt"</ul>
 <ul>net localgroup > "%logonAccount%\netlocalgroup.txt"</ul>
-
+<ul>net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"</ul>
 
 ## nonvol
 
