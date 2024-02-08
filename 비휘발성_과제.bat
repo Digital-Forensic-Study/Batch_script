@@ -54,6 +54,7 @@ if not exist "%prefetch%" (
 if not exist "%vol%" (
     mkdir "%vol%"
     echo Created %vol% directory.
+
     ::net
     if not exist "%net%" (
         mkdir "%net%"
@@ -84,6 +85,7 @@ if not exist "%vol%" (
         echo start logonAccount_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         net user > "%logonAccount%\netuser.txt"
         net localgroup > "%logonAccount%\netlocalgroup.txt"
+        net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"
     ) else (
         echo %logonAccount% directory already exists. passing...
     )
@@ -145,6 +147,7 @@ if not exist "%vol%" (
         echo start logonAccount_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         net user > "%logonAccount%\netuser.txt"
         net localgroup > "%logonAccount%\netlocalgroup.txt"
+        net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"
     ) else (
         echo %logonAccount% directory already exists. passing...
     )
