@@ -21,5 +21,5 @@ vol-nonvol 데이터를 추출하여 저장하는 배치 스크립트입니다.
 <ul>net localgroup > "%logonAccount%\netlocalgroup.txt"</ul>
 <ul>net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"</ul>
 
-## nonvol
+## Nonvol
 
