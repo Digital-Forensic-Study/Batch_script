@@ -11,7 +11,7 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 
 <br>
 
-## ※주의사항
+## ※ 주의사항
 - 관리자 권한으로 실행하지 않을 시 몇몇의 명령어가 재대로 동작하지 않을 수 있습니다.
 
 - 관리자 권한으로 실행하고 나면 `_result` 파일은 **C:\Windows\System32**에 저장됩니다.
@@ -46,5 +46,12 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 <ul>PsLoggedon.exe > "%logonAccount%\PsLoggedon.txt"</ul>
 
 ## Nonvol
+#### cache
 <s><ul>robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul></s>
 <ul>robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul>
+
+#### registry
+<ul>forecopy_handy.exe -g .\_result\_nonvol\_registry\</ul>
+
+#### mft
+<ul>forecopy_handy.exe -m .\_result\_nonvol\_mft\</ul>
