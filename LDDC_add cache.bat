@@ -14,7 +14,7 @@ set "logonAccount=%vol%\_logonAccount"
 ::set "web=%nonvol%\_web"
 ::set "robocopy=%nonvol%\_robocopy"
 set "cache=%nonvol%\_cache"
-set "chrome_cache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
+set "chromeCache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
 
 :REDO
 echo ---------- Live Disk Data Collector ----------
@@ -103,9 +103,9 @@ if not exist "%nonvol%" (
     if not exist "%cache%" (
         mkdir "%cache%"
         set "cache=%nonvol%\_cache"
-        set "chrome_cache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
+        set "chromeCache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
         echo start cache_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%chrome_cache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
+        robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
     ) else (
         echo %cache% directory already exists. passing...
     )
@@ -201,9 +201,9 @@ if not exist "%nonvol%" (
     if not exist "%cache%" (
         mkdir "%cache%"
         set "cache=%nonvol%\_cache"
-        set "chrome_cache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
+        set "chromeCache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
         echo start cache_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%chrome_cache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
+        robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
     ) else (
         echo %cache% directory already exists. passing...
     )
