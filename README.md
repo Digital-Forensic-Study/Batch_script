@@ -5,9 +5,9 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.09] vol_logonAccount 명령어추가
 ###### <s>[24.02.12] nonvol_cache 명령어추가 chrome 웹에서 캐시 데이터 저장위치 에서 하위 디렉토리들과 캐시 데이터를 포함하여 텍스쳐로 저장하는 robocopy 명령어 추가 과정에서 오류 발생하여 제거</s>
 ###### [24.02.12] vol_net 명령어추가
+###### [24.02.12] nonvol_cache 명령어추가
 ###### [24.02.12] vol_process 명령어추가
 
-###### [24.02.12] nonvol_cache 명령어추가
 ## Prefetch
 <ul>forecopy_handy -p .\_result\_prefetch\</ul>
 
