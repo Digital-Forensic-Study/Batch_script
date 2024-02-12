@@ -25,10 +25,10 @@ echo 4. end
 echo ----------------------------------------------
 set /p inputNum=Enter the number you want to run :
 
-if "%inputNum%"=="1" goto 1 :all
-if "%inputNum%"=="2" goto 2 :vol
-if "%inputNum%"=="3" goto 3 :nonvol
-if "%inputNum%"=="4" goto 4 :program end
+if "%inputNum%"=="1" goto 1 
+if "%inputNum%"=="2" goto 2 
+if "%inputNum%"=="3" goto 3 
+if "%inputNum%"=="4" goto 4 
 goto ERROR
 
 ::all
