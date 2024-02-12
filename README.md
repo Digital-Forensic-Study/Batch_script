@@ -7,6 +7,7 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.12] vol_net 명령어추가
 ###### [24.02.12] nonvol_cache 명령어추가
 ###### [24.02.12] vol_process 명령어추가
+###### [24.02.12] vol_logonAccount 명령어추가
 
 ## Prefetch
 <ul>forecopy_handy -p .\_result\_prefetch\</ul>
@@ -25,11 +26,15 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 <ul>powershell.exe -command ps > "%process%\ps.txt"</ul>
 <ul>tasklist > "%process%\tasklist"</ul>
 <ul>handle.exe > "%process%\handle_opened_files.txt"</ul>
+<ul>Listdlls.exe > "%process%\Listdlls.txt"</ul>
 
 #### logonAccount
+<ul>net session > "%logonAccount%\netsession.txt"</ul>
 <ul>net user > "%logonAccount%\netuser.txt"</ul>
 <ul>net localgroup > "%logonAccount%\netlocalgroup.txt"</ul>
 <ul>net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"</ul>
+<ul>logonsessions.exe > "%logonAccount%\logonsessions.txt"</ul>
+<ul>PsLoggedon.exe > "%logonAccount%\PsLoggedon.txt"</ul>
 
 ## Nonvol
 <s><ul>robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul></s>
