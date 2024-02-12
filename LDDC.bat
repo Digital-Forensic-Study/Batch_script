@@ -68,8 +68,12 @@ if not exist "%vol%" (
         mkdir "%net%"
         set "net=%vol%\_net"
         echo start net_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        arp -a > "%net%\arp.txt"
+        ipconfig > "%net%\ipconfig.txt"
+        getmac > "%net%\getmac.txt"
+        net > "%net%\net.txt"
         netstat -ano > "%net%\netstat.txt"
+        tcpvcon > "%net%\tcpvcon.txt"
+        arp -a > "%net%\arp.txt"
         route print > "%net%\route.txt"
     ) else (
         echo %net% directory already exists. passing...
@@ -133,8 +137,12 @@ if not exist "%vol%" (
         mkdir "%net%"
         set "net=%vol%\_net"
         echo start net_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        arp -a > "%net%\arp.txt"
+        ipconfig > "%net%\ipconfig.txt"
+        getmac > "%net%\getmac.txt"
+        net > "%net%\net.txt"
         netstat -ano > "%net%\netstat.txt"
+        tcpvcon > "%net%\tcpvcon.txt"
+        arp -a > "%net%\arp.txt"
         route print > "%net%\route.txt"
     ) else (
         echo %net% directory already exists. passing...
