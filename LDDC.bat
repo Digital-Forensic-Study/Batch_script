@@ -32,10 +32,10 @@ echo 4. end
 echo ----------------------------------------------
 set /p inputNum=Enter the number you want to run :
 
-if "%inputNum%"=="1" goto 1 :all
-if "%inputNum%"=="2" goto 2 :vol
-if "%inputNum%"=="3" goto 3 :nonvol
-if "%inputNum%"=="4" goto 4 :program end
+if "%inputNum%"=="1" goto 1
+if "%inputNum%"=="2" goto 2
+if "%inputNum%"=="3" goto 3
+if "%inputNum%"=="4" goto 4
 goto ERROR
 
 ::all
@@ -106,16 +106,7 @@ if not exist "%nonvol%" (
     mkdir "%nonvol%"
     echo Created %nonvol% directory.
 
-    ::cache
-    if not exist "%cache%" (
-        mkdir "%cache%"
-        set "cache=%nonvol%\_cache"
-        set "chrome_cache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
-        echo start cache_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        ::robocopy "%chrome_cache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
-    ) else (
-        echo %cache% directory already exists. passing...
-    )
+    
 
 ) else (
     echo %nonvol% directory already exists. passing...
@@ -204,16 +195,7 @@ if not exist "%nonvol%" (
     mkdir "%nonvol%"
     echo Created %nonvol% directory.
 
-    ::cache
-    if not exist "%cache%" (
-        mkdir "%cache%"
-        set "cache=%nonvol%\_cache"
-        set "chrome_cache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
-        echo start cache_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        ::robocopy "%chrome_cache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
-    ) else (
-        echo %cache% directory already exists. passing...
-    )
+
 
 ) else (
     echo %nonvol% directory already exists. passing...
