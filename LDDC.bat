@@ -11,9 +11,17 @@ set "net=%vol%\_net"
 set "process=%vol%\_process"
 set "logonAccount=%vol%\_logonAccount"
 
+::set "web=%nonvol%\_web"
+::set "robocopy=%nonvol%\_robocopy"
 set "cache=%nonvol%\_cache"
+set "registry=%nonvol%\_registry"
+set "mft=%nonvol%\_mft"
+set "eventlog=%nonvol%\_eventlog"
 
 :REDO
+echo ----------------------------------------------
+echo.
+echo.
 echo.
 echo   :          :'''.      :'''.        .'''''.
 echo   :          :    '.    :    '.    .'
@@ -51,7 +59,7 @@ if not exist "%prefetch%" (
     mkdir "%prefetch%"
     echo Created %prefetch% directory. 
     echo start prefetch_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-    forecopy_handy -p .\_result\_prefetch\
+    forecopy_handy.exe -p .\_result\_prefetch\
     ::프리패치 파일 리스트들을 뽑아주는 명령어지만 forecopy_handy에서 프리패치 파일 자체들을 뽑아주는 명령어 찾아서 폐기
     ::dir %SystemRoot%\Prefetch > result\_prefetch\prefetch_log.txt
 ) else (
@@ -123,6 +131,33 @@ if not exist "%nonvol%" (
         robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
     ) else (
         echo %cache% directory already exists. passing...
+    )
+
+    ::registry
+    if not exist "%registry%" (
+        mkdir "%registry%"
+        echo start registry at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -g .\_result\_nonvol\_registry\
+    ) else (
+        echo %registry% directory already exists. passing...
+    )
+    
+    ::mft
+    if not exist "%mft%" (
+        mkdir "%mft%"
+        echo start mft at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -m .\_result\_nonvol\_mft\
+    ) else (
+        echo %mft% directory already exists. passing...
+    )
+
+    ::eventlog
+    if not exist "%eventlog%" (
+        mkdir "%eventlog%"
+        echo start eventlog at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
+    ) else (
+        echo %eventlog% directory already exists. passing...
     )
 
 ) else (
@@ -210,7 +245,7 @@ if not exist "%prefetch%" (
     mkdir "%prefetch%"
     echo Created %prefetch% directory. 
     echo start prefetch_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-    forecopy_handy -p .\_result\_prefetch\
+    forecopy_handy.exe -p .\_result\_prefetch\
     ::프리패치 파일 리스트들을 뽑아주는 명령어지만 forecopy_handy에서 프리패치 파일 자체들을 뽑아주는 명령어 찾아서 폐기
     ::dir %SystemRoot%\Prefetch > result\_prefetch\prefetch_log.txt
 ) else (
@@ -232,6 +267,33 @@ if not exist "%nonvol%" (
         echo %cache% directory already exists. passing...
     )
 
+    ::registry
+    if not exist "%registry%" (
+        mkdir "%registry%"
+        echo start registry at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -g .\_result\_nonvol\_registry\
+    ) else (
+        echo %registry% directory already exists. passing...
+    )
+    
+    ::mft
+    if not exist "%mft%" (
+        mkdir "%mft%"
+        echo start mft at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -m .\_result\_nonvol\_mft\
+    ) else (
+        echo %mft% directory already exists. passing...
+    )
+
+    ::eventlog
+    if not exist "%eventlog%" (
+        mkdir "%eventlog%"
+        echo start eventlog at %DATE%_%TIME% >> _result\log.txt
+        forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
+    ) else (
+        echo %eventlog% directory already exists. passing...
+    )
+  
 ) else (
     echo %nonvol% directory already exists. passing...
 )
