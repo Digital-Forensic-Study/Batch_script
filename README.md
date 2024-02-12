@@ -1,5 +1,4 @@
-# LDDC (Live Disk Data Collector)
-## Batch_script
+# LDDC (Live Disk Data Collector) Batch_script
 Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크립트입니다.
 
 ###### [24.02.08] prefetch,vol_net, vol_process, vol_logonAccount 명령어추가
