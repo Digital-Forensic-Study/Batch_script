@@ -7,6 +7,7 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.12] vol_net 명령어추가
 ###### [24.02.12] vol_process 명령어추가
 
+###### [24.02.12] nonvol_cache 명령어추가
 ## Prefetch
 <ul>forecopy_handy -p .\_result\_prefetch\</ul>
 
@@ -32,3 +33,4 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 
 ## Nonvol
 <s><ul>robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul></s>
+<ul>robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul>
