@@ -11,8 +11,6 @@ set "net=%vol%\_net"
 set "process=%vol%\_process"
 set "logonAccount=%vol%\_logonAccount"
 
-::set "web=%nonvol%\_web"
-::set "robocopy=%nonvol%\_robocopy"
 set "cache=%nonvol%\_cache"
 
 :REDO
