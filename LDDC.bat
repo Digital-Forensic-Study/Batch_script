@@ -87,6 +87,7 @@ if not exist "%vol%" (
         echo start process_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         powershell.exe -command ps > "%process%\ps.txt"
         tasklist > "%process%\tasklist"
+        handle.exe > "%process%\handle_opened_files.txt"
     ) else (
         echo %process% directory already exists. passing...
     )
@@ -165,6 +166,7 @@ if not exist "%vol%" (
         echo start process_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         powershell.exe -command ps > "%process%\ps.txt"
         tasklist > "%process%\tasklist"
+        handle.exe > "%process%\handle_opened_files.txt"
     ) else (
         echo %process% directory already exists. passing...
     )
