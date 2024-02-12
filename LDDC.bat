@@ -88,6 +88,7 @@ if not exist "%vol%" (
         powershell.exe -command ps > "%process%\ps.txt"
         tasklist > "%process%\tasklist"
         handle.exe > "%process%\handle_opened_files.txt"
+        Listdlls.exe > "%process%\Listdlls.txt"
     ) else (
         echo %process% directory already exists. passing...
     )
@@ -97,9 +98,12 @@ if not exist "%vol%" (
         mkdir "%logonAccount%"
         set "logonAccount=%vol%\_logonAccount"
         echo start logonAccount_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        net session > "%logonAccount%\netsession.txt"
         net user > "%logonAccount%\netuser.txt"
         net localgroup > "%logonAccount%\netlocalgroup.txt"
         net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"
+        logonsessions.exe > "%logonAccount%\logonsessions.txt"
+        PsLoggedon.exe > "%logonAccount%\PsLoggedon.txt"
     ) else (
         echo %logonAccount% directory already exists. passing...
     )
@@ -167,6 +171,7 @@ if not exist "%vol%" (
         powershell.exe -command ps > "%process%\ps.txt"
         tasklist > "%process%\tasklist"
         handle.exe > "%process%\handle_opened_files.txt"
+        Listdlls.exe > "%process%\Listdlls.txt"
     ) else (
         echo %process% directory already exists. passing...
     )
@@ -176,9 +181,12 @@ if not exist "%vol%" (
         mkdir "%logonAccount%"
         set "logonAccount=%vol%\_logonAccount"
         echo start logonAccount_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        net session > "%logonAccount%\netsession.txt"
         net user > "%logonAccount%\netuser.txt"
         net localgroup > "%logonAccount%\netlocalgroup.txt"
         net localgroup administrators  > "%logonAccount%\netlocalgroupadministrators.txt"
+        logonsessions.exe > "%logonAccount%\logonsessions.txt"
+        PsLoggedon.exe > "%logonAccount%\PsLoggedon.txt"
     ) else (
         echo %logonAccount% directory already exists. passing...
     )
