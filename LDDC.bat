@@ -16,12 +16,12 @@ set "logonAccount=%vol%\_logonAccount"
 ::set "cache=%nonvol%\_cache"
 
 :REDO
-echo -
+echo ---------- Live Disk Data Collector ----------
 echo 1. all
 echo 2. vol
 echo 3. nonvol
 echo 4. end
-echo - 
+echo ----------------------------------------------
 set /p inputNum=Enter the number you want to run :
 
 if "%inputNum%"=="1" goto 1 :all
