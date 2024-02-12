@@ -111,7 +111,16 @@ if not exist "%nonvol%" (
     mkdir "%nonvol%"
     echo Created %nonvol% directory.
 
-    
+    ::cache
+    if not exist "%cache%" (
+        mkdir "%cache%"
+        set "cache=%nonvol%\_cache"
+        :: set "chromeCache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"
+        echo start cache_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"
+    ) else (
+        echo %cache% directory already exists. passing...
+    )
 
 ) else (
     echo %nonvol% directory already exists. passing...
