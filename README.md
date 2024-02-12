@@ -55,3 +55,6 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 
 #### mft
 <ul>forecopy_handy.exe -m .\_result\_nonvol\_mft\</ul>
+
+#### eventlog
+<ul>forecopy_handy.exe -e .\_result\_nonvol\_eventlog\</ul>
