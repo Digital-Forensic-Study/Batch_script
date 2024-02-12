@@ -213,17 +213,14 @@ if not exist "%nonvol%" (
 )
 
 goto REDO
-pause
 
 ::end
 :4
 echo Exit the program.
 echo END Date: %DATE% Time: %TIME% >> _result\log.txt
 exit
-pause
 
 :ERROR
 echo Invalid input. Check the values you entered.
 goto REDO
-pause
 
