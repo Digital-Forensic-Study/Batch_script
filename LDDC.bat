@@ -1,5 +1,5 @@
-:: 24.02.06
-:: 비휘발성 제작 로드맵 과제
+:: 24.02.06 ~
+:: [Live Disk Data Collector] 휘발성과 비휘발성 데이터 수집
 @echo off
 
 set "result=_result"
