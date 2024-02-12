@@ -16,6 +16,7 @@ set "logonAccount=%vol%\_logonAccount"
 ::set "cache=%nonvol%\_cache"
 
 :REDO
+echo.
 echo   :          :'''.      :'''.        .'''''.
 echo   :          :    '.    :    '.    .'
 echo   :          :     :    :     :    :
@@ -25,10 +26,10 @@ echo.
 echo.
 echo.
 echo --------- (Live Disk Data Collector) ---------
-echo 1. all
-echo 2. vol
-echo 3. nonvol
-echo 4. end
+echo 1. All data
+echo 2. Volatile data
+echo 3. non-volatile data
+echo 4. Program end
 echo ----------------------------------------------
 set /p inputNum=Enter the number you want to run :
 
