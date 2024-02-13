@@ -143,7 +143,7 @@ if not exist "%nonvol%" (
         mkdir "%cookie%"
         set "cookie=%nonvol%\_cookie"
         echo start cookie_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cokie.txt"
+        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cookie.txt"
     ) else (
         echo %cookie% directory already exists. passing...
     )
@@ -307,7 +307,7 @@ if not exist "%nonvol%" (
         mkdir "%cookie%"
         set "cookie=%nonvol%\_cookie"
         echo start cookie_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cokie.txt"
+        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cookie.txt"
     ) else (
         echo %cookie% directory already exists. passing...
     )
