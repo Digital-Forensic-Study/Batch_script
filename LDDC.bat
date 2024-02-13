@@ -137,7 +137,7 @@ if not exist "%nonvol%" (
     ::registry
     if not exist "%registry%" (
         mkdir "%registry%"
-        echo start registry at %DATE%_%TIME% >> _result\log.txt
+        echo start registry_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -g .\_result\_nonvol\_registry\
     ) else (
         echo %registry% directory already exists. passing...
@@ -146,7 +146,7 @@ if not exist "%nonvol%" (
     ::mft
     if not exist "%mft%" (
         mkdir "%mft%"
-        echo start mft at %DATE%_%TIME% >> _result\log.txt
+        echo start mft_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -m .\_result\_nonvol\_mft\
     ) else (
         echo %mft% directory already exists. passing...
@@ -155,7 +155,7 @@ if not exist "%nonvol%" (
     ::eventlog
     if not exist "%eventlog%" (
         mkdir "%eventlog%"
-        echo start eventlog at %DATE%_%TIME% >> _result\log.txt
+        echo start eventlog_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
     ) else (
         echo %eventlog% directory already exists. passing...
@@ -271,7 +271,7 @@ if not exist "%nonvol%" (
     ::registry
     if not exist "%registry%" (
         mkdir "%registry%"
-        echo start registry at %DATE%_%TIME% >> _result\log.txt
+        echo start registry_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -g .\_result\_nonvol\_registry\
     ) else (
         echo %registry% directory already exists. passing...
@@ -280,7 +280,7 @@ if not exist "%nonvol%" (
     ::mft
     if not exist "%mft%" (
         mkdir "%mft%"
-        echo start mft at %DATE%_%TIME% >> _result\log.txt
+        echo start mft_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -m .\_result\_nonvol\_mft\
     ) else (
         echo %mft% directory already exists. passing...
@@ -289,7 +289,7 @@ if not exist "%nonvol%" (
     ::eventlog
     if not exist "%eventlog%" (
         mkdir "%eventlog%"
-        echo start eventlog at %DATE%_%TIME% >> _result\log.txt
+        echo start eventlog_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
     ) else (
         echo %eventlog% directory already exists. passing...
