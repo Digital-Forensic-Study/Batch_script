@@ -2,17 +2,18 @@
 :: [Live Disk Data Collector] 휘발성과 비휘발성 데이터 수집
 @echo off
 
+::dir 생성 경로 설정
 set "result=_result"
 set "vol=%result%\_vol"
 set "nonvol=%result%\_nonvol"
 set "prefetch=%result%\_prefetch"
 
+::vol 데이터 생성 경로
 set "net=%vol%\_net"
 set "process=%vol%\_process"
 set "logonAccount=%vol%\_logonAccount"
 
-::set "web=%nonvol%\_web"
-::set "robocopy=%nonvol%\_robocopy"
+::nonVol 데이터 생성 경로
 set "cache=%nonvol%\_cache"
 set "registry=%nonvol%\_registry"
 set "mft=%nonvol%\_mft"
@@ -34,7 +35,7 @@ echo.
 echo --------- (Live Disk Data Collector) ---------
 echo 1. All data
 echo 2. Volatile data
-echo 3. non-volatile data
+echo 3. Non-volatile data
 echo 4. Program end
 echo ----------------------------------------------
 set /p inputNum=Enter the number you want to run :
