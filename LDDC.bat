@@ -170,7 +170,7 @@ if not exist "%nonvol%" (
         mkdir "%vbr%"
         set "vbr=%nonvol%\_vbr"
         echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"
+        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DATSOU /r:3 /w:5 /log:"%vbr%\vbr.txt"
     ) else (
         echo %vbr% directory already exists. passing...
     )
@@ -334,7 +334,7 @@ if not exist "%nonvol%" (
         mkdir "%vbr%"
         set "vbr=%nonvol%\_vbr"
         echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"
+        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DATSOU /r:3 /w:5 /log:"%vbr%\vbr.txt"
     ) else (
         echo %vbr% directory already exists. passing...
     )
