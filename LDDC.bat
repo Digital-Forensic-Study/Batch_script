@@ -20,7 +20,6 @@ set "cookie=%nonvol%\_cookie"
 set "registry=%nonvol%\_registry"
 set "mft=%nonvol%\_mft"
 set "eventLog=%nonvol%\_eventlog"
-::set "vbr=%nonvol%\_vbr"
 set "recent=%nonvol%\_recent"
 set "quickLaunch=%nonvol%\_quicklaunch"
 
