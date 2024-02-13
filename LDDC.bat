@@ -6,6 +6,7 @@
 set "result=_result"
 set "vol=%result%\_vol"
 set "nonvol=%result%\_nonvol"
+
 set "prefetch=%result%\_prefetch"
 
 ::vol 데이터 생성 경로
@@ -17,7 +18,10 @@ set "logonAccount=%vol%\_logonAccount"
 set "cache=%nonvol%\_cache"
 set "registry=%nonvol%\_registry"
 set "mft=%nonvol%\_mft"
-set "eventlog=%nonvol%\_eventlog"
+set "eventLog=%nonvol%\_eventlog"
+set "vbr=%nonvol%\_vbr"
+set "recent=%nonvol%\_recent"
+set "quickLaunch=%nonvol%\_quicklaunch"
 
 :REDO
 echo ----------------------------------------------
@@ -153,12 +157,42 @@ if not exist "%nonvol%" (
     )
 
     ::eventlog
-    if not exist "%eventlog%" (
-        mkdir "%eventlog%"
+    if not exist "%eventLog%" (
+        mkdir "%eventLog%"
         echo start eventlog_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
     ) else (
-        echo %eventlog% directory already exists. passing...
+        echo %eventLog% directory already exists. passing...
+    )
+
+    ::vbr
+    if not exist "%vbr%" (
+        mkdir "%vbr%"
+        set "vbr=%nonvol%\_vbr"
+        echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"
+    ) else (
+        echo %vbr% directory already exists. passing...
+    )
+
+    ::recent
+    if not exist "%recent%" (
+        mkdir "%recent%"
+        set "recent=%nonvol%\_recent"
+        echo start recent_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%APPDATA%\Microsoft\Office\Recent" "%recent%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%recent%\recent.txt"
+    ) else (
+        echo %recent% directory already exists. passing...
+    )
+
+    ::quicklaunch
+    if not exist "%quickLaunch%" (
+        mkdir "%quickLaunch%"
+        set "quickLaunch=%nonvol%\_quicklaunch"
+        echo start quicklaunch_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%APPDATA%\Microsoft\Internet Explorer\Quick Launch" "%quickLaunch%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%quickLaunch%\quicklaunch.txt"
+    ) else (
+        echo %quickLaunch% directory already exists. passing...
     )
 
 ) else (
@@ -287,12 +321,42 @@ if not exist "%nonvol%" (
     )
 
     ::eventlog
-    if not exist "%eventlog%" (
-        mkdir "%eventlog%"
+    if not exist "%eventLog%" (
+        mkdir "%eventLog%"
         echo start eventlog_part at Date: %DATE% Time: %TIME% >> _result\log.txt
         forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
     ) else (
-        echo %eventlog% directory already exists. passing...
+        echo %eventLog% directory already exists. passing...
+    )
+
+    ::vbr
+    if not exist "%vbr%" (
+        mkdir "%vbr%"
+        set "vbr=%nonvol%\_vbr"
+        echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"
+    ) else (
+        echo %vbr% directory already exists. passing...
+    )
+
+    ::recent
+    if not exist "%recent%" (
+        mkdir "%recent%"
+        set "recent=%nonvol%\_recent"
+        echo start recent_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%APPDATA%\Microsoft\Office\Recent" "%recent%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%recent%\recent.txt"
+    ) else (
+        echo %recent% directory already exists. passing...
+    )
+
+    ::quicklaunch
+    if not exist "%quickLaunch%" (
+        mkdir "%quickLaunch%"
+        set "quickLaunch=%nonvol%\_quicklaunch"
+        echo start quicklaunch_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "%APPDATA%\Microsoft\Internet Explorer\Quick Launch" "%quickLaunch%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%quickLaunch%\quicklaunch.txt"
+    ) else (
+        echo %quickLaunch% directory already exists. passing...
     )
   
 ) else (
@@ -314,4 +378,3 @@ pause
 echo Invalid input. Check the values you entered.
 goto REDO
 pause
-
