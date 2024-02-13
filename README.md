@@ -8,6 +8,9 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.12] nonvol_cache 명령어추가
 ###### [24.02.12] vol_process 명령어추가
 ###### [24.02.12] vol_logonAccount 명령어추가
+###### [24.02.13] nonvol_vbr 명령어추가
+###### [24.02.13] nonvol_recent 명령어추가
+###### [24.02.13] nonvol_quicklaunch 명령어추가
 
 <br>
 
@@ -58,3 +61,12 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 
 #### eventlog
 <ul>forecopy_handy.exe -e .\_result\_nonvol\_eventlog\</ul>
+
+#### vbr
+<ul>robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"</ul>
+
+#### recent
+<ul>robocopy "%APPDATA%\Microsoft\Office\Recent" "%recent%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%recent%\recent.txt"</ul>
+
+#### quicklaunch
+<ul>robocopy "%APPDATA%\Microsoft\Internet Explorer\Quick Launch" "%quickLaunch%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%quickLaunch%\quicklaunch.txt"</ul>
