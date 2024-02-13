@@ -11,9 +11,10 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.13] nonvol_registry 명령어추가
 ###### [24.02.13] nonvol_mft 명령어추가
 ###### [24.02.13] nonvol_eventlog 명령어추가
-###### [24.02.13] nonvol_vbr 명령어추가
+###### <s>[24.02.13] nonvol_vbr 명령어추가 비휘발성 데이터를 선별적으로 수집하는데 있어서 추가적인 데이터 분석이 필요하기에 의도와는 맞지 않다고 판단 후 제거</s>
 ###### [24.02.13] nonvol_recent 명령어추가
 ###### [24.02.13] nonvol_quicklaunch 명령어추가
+###### [24.02.13] nonvol_cookie 명령어추가
 
 <br>
 
@@ -80,6 +81,9 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 <s><ul>robocopy "%chromeCache%" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul></s>
 <ul>robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache" "%cache%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cache%\robocopy_chrome_cache.txt"</ul>
 
+#### cookie
+<ul>robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cokie.txt"</ul>
+
 #### registry
 <ul>forecopy_handy.exe -g .\_result\_nonvol\_registry\</ul>
 
@@ -89,8 +93,8 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 #### eventlog
 <ul>forecopy_handy.exe -e .\_result\_nonvol\_eventlog\</ul>
 
-#### vbr
-<ul>robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"</ul>
+#### <s>vbr</s>
+<ul><s>robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%vbr%\vbr.txt"</s></ul>
 
 #### recent
 <ul>robocopy "%APPDATA%\Microsoft\Office\Recent" "%recent%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%recent%\recent.txt"</ul>
