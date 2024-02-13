@@ -16,10 +16,11 @@ set "logonAccount=%vol%\_logonAccount"
 
 ::nonVol 데이터 생성 경로
 set "cache=%nonvol%\_cache"
+set "cookie=%nonvol%\_cookie"
 set "registry=%nonvol%\_registry"
 set "mft=%nonvol%\_mft"
 set "eventLog=%nonvol%\_eventlog"
-set "vbr=%nonvol%\_vbr"
+::set "vbr=%nonvol%\_vbr"
 set "recent=%nonvol%\_recent"
 set "quickLaunch=%nonvol%\_quicklaunch"
 
@@ -138,6 +139,16 @@ if not exist "%nonvol%" (
         echo %cache% directory already exists. passing...
     )
 
+    ::cookie
+    if not exist "%cookie%" (
+        mkdir "%cookie%"
+        set "cookie=%nonvol%\_cookie"
+        echo start cookie_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cokie.txt"
+    ) else (
+        echo %cookie% directory already exists. passing...
+    )
+
     ::registry
     if not exist "%registry%" (
         mkdir "%registry%"
@@ -163,16 +174,6 @@ if not exist "%nonvol%" (
         forecopy_handy.exe -e .\_result\_nonvol\_eventlog\
     ) else (
         echo %eventLog% directory already exists. passing...
-    )
-
-    ::vbr
-    if not exist "%vbr%" (
-        mkdir "%vbr%"
-        set "vbr=%nonvol%\_vbr"
-        echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DATSOU /r:3 /w:5 /log:"%vbr%\vbr.txt"
-    ) else (
-        echo %vbr% directory already exists. passing...
     )
 
     ::recent
@@ -302,6 +303,16 @@ if not exist "%nonvol%" (
         echo %cache% directory already exists. passing...
     )
 
+    ::cookie
+    if not exist "%cookie%" (
+        mkdir "%cookie%"
+        set "cookie=%nonvol%\_cookie"
+        echo start cookie_part at Date: %DATE% Time: %TIME% >> _result\log.txt
+        robocopy "C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Network" "%cookie%" /s /e /z /copy:DAT /r:3 /w:5 /log:"%cookie%\cokie.txt"
+    ) else (
+        echo %cookie% directory already exists. passing...
+    )
+
     ::registry
     if not exist "%registry%" (
         mkdir "%registry%"
@@ -328,17 +339,7 @@ if not exist "%nonvol%" (
     ) else (
         echo %eventLog% directory already exists. passing...
     )
-
-    ::vbr
-    if not exist "%vbr%" (
-        mkdir "%vbr%"
-        set "vbr=%nonvol%\_vbr"
-        echo start vbr_part at Date: %DATE% Time: %TIME% >> _result\log.txt
-        robocopy "%SystemDrive%\Boot" "%vbr%" /s /e /z /copy:DATSOU /r:3 /w:5 /log:"%vbr%\vbr.txt"
-    ) else (
-        echo %vbr% directory already exists. passing...
-    )
-
+    
     ::recent
     if not exist "%recent%" (
         mkdir "%recent%"
