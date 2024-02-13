@@ -8,9 +8,36 @@ Live Disk Data (vol-nonvol 데이터)를 추출하여 저장하는 배치 스크
 ###### [24.02.12] nonvol_cache 명령어추가
 ###### [24.02.12] vol_process 명령어추가
 ###### [24.02.12] vol_logonAccount 명령어추가
+###### [24.02.13] nonvol_registry 명령어추가
+###### [24.02.13] nonvol_mft 명령어추가
+###### [24.02.13] nonvol_eventlog 명령어추가
 ###### [24.02.13] nonvol_vbr 명령어추가
 ###### [24.02.13] nonvol_recent 명령어추가
 ###### [24.02.13] nonvol_quicklaunch 명령어추가
+
+<br>
+
+## Set-up
+#### ▶ LDDC는 forecopy, sysinternals suite 다운로드 및 환경변수 설정이 선행적으로 필요합니다. ◀
+
+<br>
+<br>
+
+- **Download Links**
+
+[sysinternals suite]
+>https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite
+
+<br>
+
+[forecopy]
+>https://code.google.com/archive/p/proneer/downloads
+
+<br>
+<br>
+
+- **환경변수 설정**
+> 설정 -> 시스템 -> 정보 -> 고급 시스템 설정 -> 고급 -> 환경 변수 -> 시스템 변수 (Path) 편집 -> 새로 만들기 -> sysinternals suite와 forecopy가 위치한 폴더의 경로를 각각 입력 후 저장
 
 <br>
 
