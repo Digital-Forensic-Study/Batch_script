@@ -1,5 +1,12 @@
-# LDDC (Live Disk Data Collector) Batch_script
+# LDDC (Live Disk Data Collector) Batch_script 0.0.1 Version
 ### Live Disk Data 활성 시스템에서 휘발성/비휘발성 데이터를 추출하여 저장하는 배치 스크립트입니다.
+
+<br>
+
+## About Copyright
+- TEST REPORT 양식은 저작권이 있습니다. 따라서 참고만 부탁드립니다.
+- TEST REPORT의 테스트 결과는 완전히 종료되었으며, 명령어를 추가하지 않는 한 현재와 동일합니다.
+- 팀원들께, 팀원 모두가 모든 권한을 가진 관계로 본 버전(0.0.1 Version) 이후 Commit시에는 팀원들과 Discussion 후 Convention을 지켜 해주시길 바랍니다.
 
 <br>
 
